@@ -1,0 +1,103 @@
+<!-- SLIDE 7: Results - The Importance of Non-Linearity -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="slide-canvas antialiased bg-gray-100 flex flex-col p-12 relative">
+
+        <!-- Header -->
+        <div class="text-center flex-shrink-0">
+            <h1 class="text-4xl font-bold" style="color: #003366;">Results: Performance Comparison</h1>
+            <div class="w-24 h-1.5 mt-3 mx-auto" style="background-color: #2196F3;"></div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex-grow w-full flex flex-col justify-center items-center space-y-6 pt-4">
+            
+            <!-- Hàng chứa Bảng kết quả (Table II) -->
+            <div class="w-full max-w-5xl text-center">
+                <h2 class="text-2xl font-bold text-gray-700 mb-2">Overall Performance Comparison (at 5% FPR Target)</h2>
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden text-lg">
+                    <table class="w-full text-center">
+                        <thead class="bg-gray-800 text-white font-semibold">
+                            <tr>
+                                <th class="py-3 px-2">Model</th>
+                                <th class="py-3 px-2">Precision</th>
+                                <th class="py-3 px-2">Recall</th>
+                                <th class="py-3 px-2">F1-Score</th>
+                                <th class="py-3 px-2 text-yellow-300">AUC</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-800">
+                            <tr class="bg-gray-100">
+                                <td class="py-3 px-2 font-semibold">Isolation Forest</td>
+                                <td class="py-3 px-2">0.2879</td>
+                                <td class="py-3 px-2">0.2923</td>
+                                <td class="py-3 px-2">0.2901</td>
+                                <td class="py-3 px-2">0.6039</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-2 font-semibold">Autoencoder</td>
+                                <td class="py-3 px-2">0.6837</td>
+                                <td class="py-3 px-2">0.2843</td>
+                                <td class="py-3 px-2">0.4017</td>
+                                <td class="py-3 px-2">0.6698</td>
+                            </tr>
+                            <tr class="bg-red-100">
+                                <td class="py-3 px-2 font-semibold text-red-700">Causal-IDS (Linear)</td>
+                                <td class="py-3 px-2 text-red-700">0.0002</td>
+                                <td class="py-3 px-2 text-red-700">0.0000</td>
+                                <td class="py-3 px-2 text-red-700">0.0000</td>
+                                <td class="py-3 px-2 text-red-700">0.4011</td>
+                            </tr>
+                            <tr class="bg-green-100 border-t-4 border-b-4 border-green-500">
+                                <td class="py-3 px-2 font-bold text-green-800">Causal-IDS (GBoost)</td>
+                                <td class="py-3 px-2 font-bold text-green-800">0.6872</td>
+                                <td class="py-3 px-2 font-bold text-green-800">0.2889</td>
+                                <td class="py-3 px-2 font-bold text-green-800">0.4068</td>
+                                <td class="py-3 px-2 font-extrabold text-green-800 text-xl">0.8400</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Hàng chứa Key Findings -->
+            <div class="w-full max-w-5xl grid grid-cols-2 gap-6 mt-4">
+                <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+                    <h3 class="text-2xl font-bold text-red-800 flex items-center mb-3">
+                        <i class="fas fa-exclamation-triangle mr-3"></i>Finding 1: Non-Linearity is Critical
+                    </h3>
+                    <p class="text-xl text-gray-700">The <strong class="font-semibold">Linear Causal-IDS fails completely</strong> (AUC ≈ 0.40). This proves that assuming linear relationships for complex network traffic is a flawed approach.</p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                    <h3 class="text-2xl font-bold text-green-800 flex items-center mb-3">
+                        <i class="fas fa-trophy mr-3"></i>Finding 2: Causal Approach Excels
+                    </h3>
+                    <p class="text-xl text-gray-700">Our enhanced <strong class="font-semibold">Causal-IDS (GBoost) achieves the highest AUC of 0.84</strong>, significantly outperforming all baselines in overall discriminative power.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="slide-footer">
+            <div class="w-1/4 text-left">Phuc Hao Do et al.</div>
+            <div class="w-1/2 text-center">Causal-IDS: Detecting Intrusions as Causal Violations</div>
+            <div id="slide-counter" class="w-1/4 text-right"></div>
+        </div>
+    </div>
+    
+    <!-- Navigation (không đổi) -->
+    <a id="prev-slide" class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50" href="#"><i class="fas fa-chevron-left text-6xl"></i></a>
+    <a id="next-slide" class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50" href="#"><i class="fas fa-chevron-right text-6xl"></i></a>
+    <script src="navigation.js" defer></script>
+</body>
+</html>

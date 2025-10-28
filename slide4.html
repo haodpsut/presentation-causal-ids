@@ -1,0 +1,71 @@
+<!-- SLIDE 4: The Causal-IDS Framework -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Causal-IDS Framework</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="slide-canvas antialiased bg-gray-100 flex flex-col p-12 relative">
+
+        <!-- Header -->
+        <div class="text-center flex-shrink-0">
+            <h1 class="text-4xl font-bold" style="color: #003366;">A New Paradigm: "Don't Find Outliers, Find Lawbreakers"</h1>
+            <div class="w-24 h-1.5 mt-3 mx-auto" style="background-color: #2196F3;"></div>
+        </div>
+
+        <!-- Main Content Area: Bố cục 2 cột -->
+        <div class="flex-grow w-full grid grid-cols-2 gap-8 items-center mt-4">
+            
+            <!-- CỘT TRÁI: Giải thích ý tưởng -->
+            <div class="col-span-1 h-full flex flex-col justify-center space-y-6">
+                <div class="bg-white p-5 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-800 flex items-center mb-3">
+                        <i class="fas fa-gavel mr-3"></i>The Core Idea
+                    </h3>
+                    <p class="text-xl text-gray-700">An attack is not just a statistical anomaly. It's an external intervention that <strong class="font-semibold">violates the fundamental cause-and-effect "laws"</strong> of a normal network.</p>
+                </div>
+
+                <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-800 flex items-center mb-3">
+                        <i class="fas fa-cogs mr-3"></i>How Causal-IDS Works
+                    </h3>
+                    <ul class="list-decimal list-inside space-y-2 text-xl text-gray-700">
+                        <li><strong>Learn the "Laws":</strong> First, it learns a Structural Causal Model (a graph of cause-effect relationships) from purely <span class="font-semibold">benign</span> traffic.</li>
+                        <li><strong>Check for Violations:</strong> For new traffic, it calculates a <span class="font-semibold">Causal Anomaly Score (CAS)</span>—how badly the traffic deviates from the learned causal laws.</li>
+                        <li><strong>Detect Attacks:</strong> A high CAS indicates a mechanism has been broken, signaling a likely intrusion.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CỘT PHẢI: Sơ đồ kiến trúc (Figure 1) -->
+            <div class="col-span-1 h-full flex flex-col items-center justify-center">
+                <h2 class="text-2xl font-bold text-gray-700 mb-2">The Causal-IDS Architecture</h2>
+                 <div class="w-full bg-white p-4 rounded-xl shadow-lg" style="height: 400px;">
+                    <img src="images/figure1_causal_ids_architecture.png" alt="Causal-IDS Architecture" 
+                         class="w-full h-full object-contain">
+                </div>
+                <p class="text-sm text-gray-500 mt-2 italic">Fig. 1. The two-phase architecture of Causal-IDS.</p>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="slide-footer">
+            <div class="w-1/4 text-left">Phuc Hao Do et al.</div>
+            <div class="w-1/2 text-center">Causal-IDS: Detecting Intrusions as Causal Violations</div>
+            <div id="slide-counter" class="w-1/4 text-right"></div>
+        </div>
+    </div>
+    
+    <!-- Navigation (không đổi) -->
+    <a id="prev-slide" class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50" href="#"><i class="fas fa-chevron-left text-6xl"></i></a>
+    <a id="next-slide" class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50" href="#"><i class="fas fa-chevron-right text-6xl"></i></a>
+    <script src="navigation.js" defer></script>
+</body>
+</html>

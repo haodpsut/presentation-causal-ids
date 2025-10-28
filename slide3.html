@@ -1,0 +1,85 @@
+<!-- SLIDE 3: Motivation: The Limits of Correlational IDS -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Segoe+UI:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="slide-canvas antialiased bg-gray-100 flex flex-col justify-center items-center p-12 relative">
+
+        <h1 class="text-4xl font-bold" style="color: #003366;">The Problem with Traditional ML-based IDS</h1>
+        <div class="w-24 h-1.5 mt-3" style="background-color: #2196F3;"></div>
+
+        <div class="flex-grow w-full max-w-5xl flex flex-col justify-center items-center space-y-8 mt-6">
+            
+            <div class="w-full text-center p-4 bg-white rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-gray-800">They Learn Correlations, Not Causation</h2>
+                <p class="text-xl text-gray-600 mt-2">Standard ML models are excellent at finding statistical patterns, but they don't understand the underlying <span class="font-semibold">cause-and-effect</span> dynamics of a network.</p>
+            </div>
+
+            <!-- Ví dụ minh họa -->
+            <div class="w-full grid grid-cols-2 gap-8 items-center text-center">
+                <!-- Flash Crowd (Benign) -->
+                <div class="bg-green-50 p-6 rounded-lg border-2 border-green-200">
+                    <h3 class="text-2xl font-bold text-green-800 mb-3">Benign "Flash Crowd"</h3>
+                    <i class="fas fa-users text-6xl text-green-600 mb-3"></i>
+                    <p class="text-lg text-gray-700">Many legitimate users access a server at once.</p>
+                    <div class="mt-4 font-mono text-xl p-3 bg-white rounded shadow-sm">
+                        High Traffic <i class="fas fa-long-arrow-alt-right"></i> High CPU Load
+                    </div>
+                </div>
+
+                <!-- DDoS Attack (Malicious) -->
+                 <div class="bg-red-50 p-6 rounded-lg border-2 border-red-200">
+                    <h3 class="text-2xl font-bold text-red-800 mb-3">Malicious DDoS Attack</h3>
+                    <i class="fas fa-robot text-6xl text-red-600 mb-3"></i>
+                    <p class="text-lg text-gray-700">A botnet floods a server with malicious requests.</p>
+                    <div class="mt-4 font-mono text-xl p-3 bg-white rounded shadow-sm">
+                        High Traffic <i class="fas fa-long-arrow-alt-right"></i> High CPU Load
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 w-full max-w-4xl p-6 bg-red-100 rounded-lg text-center">
+                <h2 class="text-3xl font-bold text-red-800 flex items-center justify-center">
+                    <i class="fas fa-exclamation-triangle mr-4"></i>The Consequence: High False Positives
+                </h2>
+                <p class="text-xl text-gray-800 mt-3">
+                    A correlational model sees the <span class="font-semibold">same pattern</span> (High Traffic → High CPU) and may misclassify the benign event as an attack, leading to alert fatigue.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="slide-footer">
+            <div class="w-1/4 text-left">Phuc Hao Do et al.</div>
+            <div class="w-1/2 text-center">Causal-IDS: Detecting Intrusions as Causal Violations</div>
+            <div id="slide-counter" class="w-1/4 text-right"></div>
+        </div>
+    </div>
+
+    <!-- Navigation buttons and script -->
+    <a id="prev-slide"
+        class="fixed left-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
+        href="#">
+        <i class="fas fa-chevron-left text-6xl"></i>
+    </a>
+    <a id="next-slide"
+        class="fixed right-0 top-1/2 -translate-y-1/2 p-6 text-transparent hover:text-white/50 transition-colors duration-300 z-50"
+        href="#">
+        <i class="fas fa-chevron-right text-6xl"></i>
+    </a>
+    <script src="navigation.js" defer></script>
+
+</body>
+</html>
